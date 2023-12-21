@@ -5,14 +5,6 @@ const dotenv = require("dotenv");
 const cors = require("cors");
 const auth = require("./routes/auth")
 
-/* 1]product head
-2]product name
-3]product price
-4]product color and type
-5]product description
-6]available / not -stock
-7]brand */
-
 const app = express();
 dotenv.config();
 app.use(cors());
