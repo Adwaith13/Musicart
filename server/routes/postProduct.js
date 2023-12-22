@@ -6,6 +6,7 @@ const Product = require("../models/product");
 router.post("/post", async (req, res) => {
   try {
     const {
+      image,
       product_head,
       product_name,
       product_price,
@@ -16,23 +17,8 @@ router.post("/post", async (req, res) => {
       brand,
     } = req.body;
 
-    if (
-      !product_head ||
-      !product_name ||
-      !product_price ||
-      !product_color ||
-      !product_type ||
-      !product_description ||
-      !availability ||
-      !brand
-    ) {
-      return res.status(500).json({
-        status: "failed",
-        message: "all fields are required",
-      });
-    }
-
-    const postDetails = await Product.create(
+    const postDetails = await Product.create({
+      image,
       product_head,
       product_name,
       product_price,
@@ -40,8 +26,8 @@ router.post("/post", async (req, res) => {
       product_type,
       product_description,
       availability,
-      brand
-    );
+      brand,
+    });
 
     return res.status(200).json({
       status: "success",
@@ -80,27 +66,27 @@ router.get("/products", async (req, res) => {
   }
 });
 
-router.get("/product/:id",async(req,res)=>{
-    try {
-        const {id} = req.params;
-        const productData = await Product.findById(id);
-        if (!productData) {
-          return res.status(404).json({
-            status: "failed",
-            msg: "data not found",
-          });
-        }
-        return res.status(200).json({
-          status: "success",
-          products: productData,
-        });
-      } catch (error) {
-        console.log(error);
-        return res.status(500).json({
-          status: "failed",
-          msg: "internal server error",
-        });
-      }
-})
+router.get("/product/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+    const productData = await Product.findById(id);
+    if (!productData) {
+      return res.status(404).json({
+        status: "failed",
+        msg: "data not found",
+      });
+    }
+    return res.status(200).json({
+      status: "success",
+      products: productData,
+    });
+  } catch (error) {
+    console.log(error);
+    return res.status(500).json({
+      status: "failed",
+      msg: "internal server error",
+    });
+  }
+});
 
-
+module.exports = router;

@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const cors = require("cors");
 const auth = require("./routes/auth")
+const productData = require("./routes/postProduct");
 
 const app = express();
 dotenv.config();
@@ -25,6 +26,7 @@ app.get("/",(req,res)=>{
 })
 
 app.use("/",auth);
+app.use("/",productData);
 
 app.listen(3000,()=>{
     console.log(`Server is running on port 3000`);
