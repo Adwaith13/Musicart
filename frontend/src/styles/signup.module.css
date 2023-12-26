@@ -1,0 +1,124 @@
+* {
+  margin: 0;
+}
+.signupContainer {
+  margin-left: 35%;
+  margin-top: 2%;
+  width: 28vw;
+  height: 80vh;
+  border: 1px solid grey;
+  border-radius: 10px;
+}
+
+.loginContainer {
+  margin-left: 35%;
+  margin-top: 3%;
+  width: 28vw;
+  height: fit-content;
+  border: 1px solid grey;
+  border-radius: 10px;
+}
+.header {
+  margin-left: 5%;
+  margin-top: 5%;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.5em;
+  font-style: normal;
+  font-weight: 520;
+  line-height: normal;
+}
+
+.text {
+  margin-left: 5%;
+  margin-top: 5%;
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.termsText {
+  margin-left: 5%;
+  margin-top: 5%;
+  margin-right: 0.8%;
+  font-family: "Roboto", sans-serif;
+  font-size: 0.75rem;
+  font-style: bold;
+  font-weight: 800;
+  line-height: normal;
+}
+
+.agree {
+  margin-left: 5%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  margin-right: 0.8%;
+  font-family: "Roboto", sans-serif;
+  font-size: 0.75rem;
+  font-style: bold;
+  font-weight: 800;
+  line-height: normal;
+}
+
+.inputs {
+  margin-left: 5%;
+  margin-top: 2%;
+  width: 85%;
+  padding: 5px 2px;
+  border: 1px solid grey;
+  border-radius: 5px;
+}
+
+.section {
+  margin-top: 2%;
+  margin-left: 34%;
+}
+
+.sectionText {
+  font-family: "Roboto", sans-serif;
+  font-size: 1em;
+  font-style: bold;
+  font-weight: 800;
+  line-height: normal;
+}
+
+.line1 {
+  margin-right: 1%;
+}
+
+.line2 {
+  margin-left: 1%;
+}
+
+.createBtn {
+  width: 24%;
+  padding: 7px 5px;
+  margin-top: 2%;
+  margin-left: 37%;
+  font-family: "Roboto", sans-serif;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  border-radius: 5px;
+  color: black;
+  border: 1px solid grey;
+  background-color: white;
+  cursor: pointer;
+}
+
+.account {
+  display: flex;
+  margin-top: 2%;
+  margin-left: 40%;
+}
+
+.already {
+  font-family: "Roboto", sans-serif;
+}
+
+.signIn {
+  margin-left: 5px;
+  font-family: "Roboto";
+  text-decoration: underline;
+  cursor: pointer;
+}
