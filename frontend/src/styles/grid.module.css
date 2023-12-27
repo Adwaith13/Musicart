@@ -1,0 +1,62 @@
+.container {
+  display: flex;
+  width: 95%;
+  margin-left: 5%;
+  margin-top: 5%;
+  height: fit-content;
+  flex-wrap: wrap;
+}
+
+.product {
+  flex: 0 0 25%;
+  box-sizing: border-box;
+  padding: 10px;
+  margin-bottom: 2%;
+}
+
+.image {
+  border-radius: 10px;
+  margin-bottom: 5px;
+}
+
+.detail {
+  padding: 5px 5px;
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  display: inline;
+}
+
+.listContainer {
+  width: 92%;
+  margin-left: 3%;
+  margin-top: 5%;
+}
+
+.listProduct {
+  width: 100%;
+}
+
+.listcontainer {
+  display: flex;
+  width: 100%;
+  margin-bottom: 5%;
+}
+
+.detailcontainer {
+  width: 60%;
+  display: block;
+}
+
+.name{
+  margin-left: 5%;
+  padding: 5px 5px;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.2rem;
+}
+
+.listdetail {
+  margin-left: 5%;
+  padding: 5px 5px;
+  font-family: "Roboto";
+  font-size: 1rem;
+}

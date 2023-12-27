@@ -3,8 +3,11 @@ import ContinueBtn from "./ContinueBtn";
 import line from "../assets/images/line.png";
 import Footer from "./Footer";
 import Logo from "./Logo";
+import { useNavigate } from "react-router-dom";
+import Navbar from "./Navbar";
 
 export default function Login() {
+  const navigate = useNavigate();
   return (
     <>
       <Logo />
@@ -26,7 +29,7 @@ export default function Login() {
         <span className={signupStyles.sectionText}>New to Musicart</span>
         <img src={line} width={150} className={signupStyles.line2}></img>
       </div>
-      <button className={signupStyles.createBtn}>
+      <button className={signupStyles.createBtn}  onClick={()=>navigate("/signup")}>
         Create your Musicart account
       </button>
       <Footer />

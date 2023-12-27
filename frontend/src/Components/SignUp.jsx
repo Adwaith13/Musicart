@@ -2,7 +2,10 @@ import signupStyles from "../styles/signup.module.css";
 import ContinueBtn from "./ContinueBtn";
 import Footer from "./Footer";
 import Logo from "./Logo";
+import { useNavigate } from "react-router-dom";
+
 export default function SignUp() {
+  const navigate = useNavigate();
   return (
     <>
       <Logo />
@@ -29,7 +32,9 @@ export default function SignUp() {
       </div>
       <div className={signupStyles.account}>
         <p className={signupStyles.already}>Already have an Account?</p>
-        <p className={signupStyles.signIn}>Sign In</p>
+        <p className={signupStyles.signIn} onClick={() => navigate("/login")}>
+          Sign In
+        </p>
       </div>
       <Footer />
     </>

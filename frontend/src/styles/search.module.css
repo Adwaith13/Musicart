@@ -1,0 +1,16 @@
+.input {
+  margin-top: 2%;
+  margin-left: 7%;
+  width: 78%;
+  padding: 8px 50px;
+  border-radius: 10px;
+  border: 1px solid grey;
+}
+
+.logo {
+  position: absolute;
+  margin-top: 2%;
+  margin-left: 8%;
+  width: 2%;
+  height: 5%;
+}

@@ -1,0 +1,44 @@
+.container {
+  margin-left: 7%;
+  margin-top: 2%;
+  width: 85vw;
+  height: 27vh;
+  background: linear-gradient(90deg, #7286b4 0%, #e794ce 100%);
+  border-radius: 10px;
+}
+
+.head1 {
+  padding-top: 2%;
+  margin-left: 5%;
+  font-family: "Roboto", sans-serif;
+  font-size: 2rem;
+  color: #2e0052;
+}
+
+.head2 {
+  margin-left: 5%;
+  font-family: "Roboto", sans-serif;
+  font-size: 2rem;
+  color: #2e0052;
+}
+
+.btn{
+    margin-left: 5%;
+    margin-top: 1.5%;
+    background-color: #2e0052;
+    color: white;
+    font-family: 'Roboto',sans-serif;
+    font-size: 0.8rem;
+    padding: 5px 5px;
+    width: 12%;
+    height: 18%;
+    border-radius: 10px;
+    border: none;
+}
+
+.image{
+    position: absolute;
+    width: 20%;
+    height: 31.2%;
+    margin-left: 70%;
+}
