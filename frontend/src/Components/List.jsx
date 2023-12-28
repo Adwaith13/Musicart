@@ -1,9 +1,13 @@
 import { useEffect, useState } from "react";
 import { fetchProducts } from "../api/fetchProducts";
 import gridStyles from "../styles/grid.module.css";
+import cart from "../assets/logos/cart.svg";
+import Product from "../pages/Product";
+import { useNavigate } from "react-router-dom";
 
 export default function List() {
   const [data, setData] = useState([]);
+  const [selectedProduct, setSelectedProduct] = useState(null);
   useEffect(() => {
     const fetchApi = async () => {
       try {
@@ -15,11 +19,22 @@ export default function List() {
     };
     fetchApi();
   }, []);
-  console.log(data);
+
+  const navigate = useNavigate();
+  const handleProduct = (productData) => {
+    setSelectedProduct(productData);
+    navigate("/product", { state: { productData } });
+  };
+
   return (
     <div className={gridStyles.listContainer}>
       {data.map((item, index) => (
-        <div key={index} className={gridStyles.listProduct}>
+        <div
+          key={index}
+          className={gridStyles.listProduct}
+          onClick={() => handleProduct(item)}
+        >
+          <img src={cart} className={gridStyles.cart} alt="Add to Cart" />
           <div className={gridStyles.listcontainer}>
             {item.image.map((imageUrl, imageIndex) => (
               <img

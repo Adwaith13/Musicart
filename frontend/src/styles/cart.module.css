@@ -1,0 +1,67 @@
+.header {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.5rem;
+  text-align: center;
+  margin-top: 3%;
+}
+
+.image {
+  margin-right: 1%;
+}
+
+.container {
+  display: flex;
+  width: 95%;
+}
+
+.left {
+  width: 70%;
+  margin-left: 5%;
+  height: 40%;
+  border: 1px solid #e1e1e1;
+}
+
+.placeOrder {
+  margin-left: 78%;
+  margin-top: 1%;
+  font-family: "Roboto", sans-serif;
+  font-size: 0.8rem;
+  border: none;
+  background-color: #ffd600;
+  width: 18%;
+  padding: 8px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.checkoutHead {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.5rem;
+  text-align: center;
+  text-decoration: underline;
+}
+
+.parent{
+    display: flex;
+    width: 95%;
+}
+
+.checkoutleft{
+    margin-left:8%;
+    width: 60%;
+    margin-top: 2%;
+}
+
+.first{
+    display:flex;
+    margin-bottom: 2%;
+}
+
+.a{
+    padding: 10px 5px;
+    color: #B52B00;
+}
+
+.b{
+    margin-left: 50%;
+}

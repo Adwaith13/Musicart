@@ -1,0 +1,46 @@
+.container {
+  margin-top: 2%;
+  width: 95%;
+}
+
+.head {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.3rem;
+  margin-left: 5%;
+  line-height: 30px;
+}
+
+.productContainer {
+  display: flex;
+  margin-top: 2%;
+  margin-left: 5%;
+  height: fit-content;
+}
+
+.image {
+  border: 3px solid #2e0052;
+  border-radius: 20px;
+  margin-right: 2%;
+}
+
+.name {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.2rem;
+  margin-bottom: 1%;
+}
+
+.price {
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  margin-bottom: 1%;
+}
+
+.color,
+.about,
+.description,
+.availability,
+.brand {
+  font-family: "Roboto",sans-serif;
+  font-size: 1rem;
+  margin-bottom: 1%;
+}

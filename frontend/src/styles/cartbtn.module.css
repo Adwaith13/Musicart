@@ -1,0 +1,25 @@
+.addcartbtn {
+  margin-left: 40%;
+  margin-top:1%;
+  font-family: "Roboto", sans-serif;
+  font-size: 0.8rem;
+  border: none;
+  background-color: #ffd600;
+  width: 18%;
+  padding: 8px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.buybtn {
+  margin-left: 40%;
+  margin-top: 1%;
+  font-family: "Roboto", sans-serif;
+  font-size: 0.8rem;
+  border: none;
+  background-color: #ffd600;
+  width: 18%;
+  padding: 8px;
+  border-radius: 10px;
+  cursor: pointer;
+}
