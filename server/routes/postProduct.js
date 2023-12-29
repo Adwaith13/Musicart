@@ -1,6 +1,9 @@
 const express = require("express");
 const router = express.Router();
 const Product = require("../models/product");
+const Cart = require("../models/cart");
+const isUserAuthenticated = require("../middlewares/isUserAuthenticated");
+const fetchUserID = require("../middlewares/fetchUserID");
 
 //post product details
 router.post("/post", async (req, res) => {

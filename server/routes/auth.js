@@ -22,12 +22,11 @@ router.post("/register", async (req, res) => {
       });
     }
 
-    const encryptMobileNo = await bcrypt.hash(mobileNo, 10);
     const encryptedPassword = await bcrypt.hash(password, 10);
 
     const newUser = await User.create({
       name,
-      mobileNo: encryptMobileNo,
+      mobileNo,
       email_id,
       password: encryptedPassword,
     });
