@@ -1,16 +1,48 @@
+import { useState } from "react";
 import Navbar from "../Components/Navbar";
 import HomeLogo from "../Components/HomeLogo";
 import Back from "../Components/Back";
-import AddCartBtn from "../Components/AddCartBtn";
 import BuyNow from "../Components/BuyNow";
 import Footer from "../Components/Footer";
 import { useLocation } from "react-router-dom";
 import productStyle from "../styles/product.module.css";
+import { addtoCart } from "../api/addtoCart";
+import cartbtnStyles from "../styles/cartbtn.module.css";
 
 export default function Product() {
   const location = useLocation();
   const { productData } = location.state;
-  console.log(productData);
+
+  const productID = productData._id;
+
+  const loginToken = localStorage.getItem("loginToken");
+  console.log("login", loginToken);
+  const registerToken = localStorage.getItem("registerToken");
+  console.log("register", registerToken);
+  let token;
+
+  if (loginToken) {
+    token = loginToken;
+  } else if (registerToken) {
+    token = registerToken;
+  }
+
+  const [message, setMessage] = useState("");
+
+  const addProduct = async () => {
+    try {
+      const response = await addtoCart(token, productID);
+      if (response) {
+        console.log("added");
+        setMessage("Product added to cart");
+      } else {
+        setMessage("Failed to add product to cart");
+      }
+    } catch (error) {
+      console.error(error);
+      setMessage("Error adding product to cart");
+    }
+  };
 
   return (
     <div>
@@ -44,7 +76,10 @@ export default function Product() {
           </div>
         </div>
       </div>
-      <AddCartBtn />
+      <button className={cartbtnStyles.addcartbtn} onClick={addProduct}>
+        Add to Cart
+      </button>
+      {message}
       <BuyNow />
       <Footer />
     </div>

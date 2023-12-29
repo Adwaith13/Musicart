@@ -21,7 +21,7 @@
   border: 1px solid #e1e1e1;
 }
 
-.placeOrder {
+.placeOrderCart {
   margin-left: 78%;
   margin-top: 1%;
   font-family: "Roboto", sans-serif;
@@ -34,6 +34,43 @@
   cursor: pointer;
 }
 
+.summary{
+  border: 1px solid black;
+  margin-left: 15%; 
+  width: 25%;
+}
+
+.placeOrderCheckout1 {
+  margin-top: 5%;
+  margin-left: 5%;
+  font-family: "Roboto", sans-serif;
+  font-size: 0.8rem;
+  width: 90%;
+  border: none;
+  background-color: #ffd600;
+  padding: 8px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.orderBottom{
+  border: 1px solid black;
+  width: 55%;
+  margin-left: 5%;
+  height: 10vh;
+}
+
+.placeOrderCheckout2 {
+  font-family: "Roboto", sans-serif;
+  font-size: 0.8rem;
+  width: 40%;
+  border: none;
+  background-color: #ffd600;
+  padding: 8px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
 .checkoutHead {
   font-family: "Roboto", sans-serif;
   font-size: 1.5rem;
@@ -41,27 +78,27 @@
   text-decoration: underline;
 }
 
-.parent{
-    display: flex;
-    width: 95%;
+.parent {
+  display: flex;
+  width: 95%;
 }
 
-.checkoutleft{
-    margin-left:8%;
-    width: 60%;
-    margin-top: 2%;
+.checkoutleft {
+  margin-left: 8%;
+  width: 60%;
+  margin-top: 2%;
 }
 
-.first{
-    display:flex;
-    margin-bottom: 2%;
+.first {
+  display: flex;
+  margin-bottom: 2%;
 }
 
-.a{
-    padding: 10px 5px;
-    color: #B52B00;
+.a {
+  padding: 10px 5px;
+  color: #b52b00;
 }
 
-.b{
-    margin-left: 50%;
+.b {
+  margin-left: 50%;
 }
