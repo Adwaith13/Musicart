@@ -5,6 +5,7 @@ import HomeLogo from "../Components/HomeLogo";
 import cartStyles from "../styles/cart.module.css";
 import { fetchCart } from "../api/fetchCart";
 import { Fragment, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function Cart() {
   const loginToken = localStorage.getItem("loginToken");
@@ -34,6 +35,8 @@ export default function Cart() {
     fetchUserCart();
   }, []);
 
+  const navigate = useNavigate();
+
   return (
     <div>
       <Navbar />
@@ -58,46 +61,83 @@ export default function Cart() {
             <p className={cartStyles.a}>3.Review Items and Delivery</p>
             {data.map((item) => (
               <div key={item.product._id}>
-                <img src={item.product.image} width={200}></img>
-                <h2>{item.product.product_name}</h2>
-                <p>Color - {item.product.product_color}</p>
-                <p>{item.product.availability}</p>
-                <p className={cartStyles.b}>
+                <img
+                  src={item.product.image}
+                  width={200}
+                  className={cartStyles.checkoutImg}
+                ></img>
+                <h2 className={cartStyles.checkoutName}>
+                  {item.product.product_name}
+                </h2>
+                <p className={cartStyles.checkoutDetails}>
+                  Color - {item.product.product_color}
+                </p>
+                <p className={cartStyles.checkoutDetails}>
+                  {item.product.availability}
+                </p>
+                <p className={cartStyles.delivery}>
                   Estimated delivery : Monday — FREE Standard Delivery
                 </p>
               </div>
             ))}
           </div>
         </div>
+
         <div className={cartStyles.summary}>
-          <button className={cartStyles.placeOrderCheckout1}>
+          <button
+            className={cartStyles.placeOrderCheckout1}
+            onClick={() => navigate("/thanks")}
+          >
             Place Order
           </button>
-          <p>
+          <p className={cartStyles.summaryText}>
             By placing your order, you agree to Musicart privacy notice and
             conditions of use.
           </p>
           <hr />
-          <h4>Order Summary</h4>
+          <h4 className={cartStyles.summaryOrderSumm}>Order Summary</h4>
           {data.map((item) => (
             <>
-              <p key={item.product._id}>Items: ₹{item.product.product_price}</p>
-              <p>Delivery : ₹45</p>
-              <p>Order Total - ₹{parseInt(item.product.product_price) + 45}</p>
+              <p key={item.product._id} className={cartStyles.summItems}>
+                Items:{" "}
+                <span className={cartStyles.price1}>
+                  ₹{item.product.product_price}
+                </span>
+              </p>
+              <p className={cartStyles.summItems}>Delivery : ₹45</p>
+              <hr />
+              <p className={cartStyles.total}>
+                Order Total :
+                <span className={cartStyles.price}>
+                  ₹{parseInt(item.product.product_price) + 45}
+                </span>
+              </p>
             </>
           ))}
         </div>
       </div>
 
       <div className={cartStyles.orderBottom}>
-        <button className={cartStyles.placeOrderCheckout2}>Place Order</button>
+        <button
+          className={cartStyles.placeOrderCheckout2}
+          onClick={() => navigate("/thanks")}
+        >
+          Place Order
+        </button>
         {data.map((item) => (
           <Fragment key={item.product._id}>
-            <span>
+            <span className={cartStyles.bottomPrice}>
               Order Total - ₹{parseInt(item.product.product_price) + 45}
             </span>
-            <br/>
-            <span>
+            <br></br>
+            <button
+              className={cartStyles.placeOrderCheckout3}
+              onClick={() => navigate("/thanks")}
+            >
+              Place Order
+            </button>
+            <br />
+            <span className={cartStyles.text}>
               By placing your order, you agree to Musicart privacy notice and
               conditions of use.
             </span>

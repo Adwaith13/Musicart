@@ -42,3 +42,30 @@
     height: 31.2%;
     margin-left: 70%;
 }
+
+@media screen and (max-width:768px){
+  .container{
+    width: 90%;
+    height: 20vh;
+  }
+
+  .head1{
+    font-size: 1.4rem;
+    padding-top: 5%;
+  }
+
+  .head2{
+   font-size: 1.4rem;
+  }
+
+  .image{
+    height: 21%;
+    width: 20%;
+  }
+
+  .btn{
+    width: 30%;
+    margin-top: 3%;
+  }
+  
+}

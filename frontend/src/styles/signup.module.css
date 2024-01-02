@@ -122,3 +122,51 @@
   text-decoration: underline;
   cursor: pointer;
 }
+
+@media screen and (max-width: 768px) {
+  .loginContainer {
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 5%;
+  }
+
+  .section {
+    margin-left: 2%;
+    width: 100%;
+    margin-top: 5%;
+  }
+
+  .line1 {
+    width: 30%;
+    margin-left: 0;
+    margin-bottom: 1.2%;
+  }
+
+  .line2 {
+    width: 30%;
+    margin-bottom: 1.5%;
+  }
+
+  .sectionText {
+    margin-top: 10%;
+  }
+
+  .createBtn{
+    margin-left: 5%;
+    margin-top: 10%;
+    width: 90%;
+  }
+
+  .signupContainer{
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 5%;
+  }
+
+  .account{
+    margin-left: 15%;
+    margin-top: 5%;
+  }
+
+  
+}

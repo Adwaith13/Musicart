@@ -47,28 +47,64 @@ export default function Cart() {
         <img src={bag} width={30} className={cartStyles.image}></img>My Cart
       </h1>
       <div className={cartStyles.container}>
-        {data.map((item) => (
-          <>
-            <div className={cartStyles.left} key={item.product._id}>
-              <img src={item.product.image} width={200}></img>
-              <h1>{item.product.product_name}</h1>
-              <p>{item.product.product_price}</p>
-              <p>Quantity-{item.count}</p>
-              <p>Total - {item.product.product_price}</p>
-              <h4>
-                {item.count} Item - ₹{parseInt(item.product.product_price)*parseInt(item.count)}
-              </h4>
-            </div>
-          </>
-        ))}
+        <div className={cartStyles.left}>
+          <table className={cartStyles.productTable}>
+            <thead>
+              <tr>
+                <th className={cartStyles.head}></th>
+                <th className={cartStyles.head}></th>
+                <th className={cartStyles.head}>Price</th>
+                <th className={cartStyles.head}>Quantity</th>
+                <th className={cartStyles.head}>Total</th>
+              </tr>
+            </thead>
+            <tbody>
+              {data.map((item) => (
+                <tr key={item.product._id}>
+                  <td className={cartStyles.tableImage}>
+                    <img
+                      src={item.product.image}
+                      alt={item.product.product_name}
+                      width={300}
+                    />
+                  </td>
+                  <td className={cartStyles.productName}>
+                    {item.product.product_name}
+                    <br />
+                    Color - {item.product.product_color}
+                    <br />
+                    {item.product.availability}
+                  </td>
+                  <td className={cartStyles.price}>
+                    {item.product.product_price}
+                  </td>
+                  <td className={cartStyles.quantity}>{item.count}</td>
+                  <td>
+                    {parseInt(item.product.product_price) *
+                      parseInt(item.count)}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
 
         {data.map((item) => (
           <div className={cartStyles.right} key={item.product._id}>
-            <h3>Price Details</h3>
-            <p>Total MRP - ₹{item.product.product_price}</p>
-            <p>Discount on MRP -₹</p>
-            <p>Convenience Fee ₹45</p>
-            <p>Total Amount - ₹{parseInt(item.product.product_price) + 45}</p>
+            <h3 className={cartStyles.rightHead}>Price Details</h3>
+            <p className={cartStyles.detail}>
+              Total MRP - <span className={cartStyles.numbers}>₹{item.product.product_price}</span>
+            </p>
+            <p className={cartStyles.detail}>
+              Discount on MRP <span className={cartStyles.numbers}>₹0</span>
+            </p>
+            <p className={cartStyles.detail}>
+              Convenience Fee <span className={cartStyles.numbers}>₹45</span>
+            </p>
+            <p className={cartStyles.detail}>
+              Total Amount -{" "}
+              <span className={cartStyles.numbers}>₹{parseInt(item.product.product_price) + 45}</span>
+            </p>
           </div>
         ))}
       </div>

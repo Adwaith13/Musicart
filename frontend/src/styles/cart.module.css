@@ -11,61 +11,56 @@
 
 .container {
   display: flex;
-  width: 95%;
+  margin-top: 2%;
+  width: 100%;
 }
 
 .left {
+  display: flex;
   width: 70%;
   margin-left: 5%;
-  height: 40%;
+  height: fit-content;
   border: 1px solid #e1e1e1;
+}
+
+.productTable {
+  width: 100%;
+}
+
+.tableImage {
+  width: 20%;
+  border: 1px solid purple;
+}
+
+.productName {
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  margin-bottom: 1%;
+}
+
+.right {
+  margin-left: 3%;
+}
+
+.rightHead {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.3rem;
+  margin-bottom: 5%;
+}
+
+.detail {
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
 }
 
 .placeOrderCart {
   margin-left: 78%;
-  margin-top: 1%;
+  margin-top: 4%;
   font-family: "Roboto", sans-serif;
   font-size: 0.8rem;
   border: none;
   background-color: #ffd600;
   width: 18%;
-  padding: 8px;
-  border-radius: 10px;
-  cursor: pointer;
-}
-
-.summary{
-  border: 1px solid black;
-  margin-left: 15%; 
-  width: 25%;
-}
-
-.placeOrderCheckout1 {
-  margin-top: 5%;
-  margin-left: 5%;
-  font-family: "Roboto", sans-serif;
-  font-size: 0.8rem;
-  width: 90%;
-  border: none;
-  background-color: #ffd600;
-  padding: 8px;
-  border-radius: 10px;
-  cursor: pointer;
-}
-
-.orderBottom{
-  border: 1px solid black;
-  width: 55%;
-  margin-left: 5%;
-  height: 10vh;
-}
-
-.placeOrderCheckout2 {
-  font-family: "Roboto", sans-serif;
-  font-size: 0.8rem;
-  width: 40%;
-  border: none;
-  background-color: #ffd600;
   padding: 8px;
   border-radius: 10px;
   cursor: pointer;
@@ -97,8 +92,209 @@
 .a {
   padding: 10px 5px;
   color: #b52b00;
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  margin-bottom: 2%;
 }
 
 .b {
-  margin-left: 50%;
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  margin-top: 2%;
+  margin-left: 45%;
+  color: #797979;
+}
+
+.checkoutImg {
+  margin-top: 5%;
+  margin-left: 45%;
+  border: 1px solid purple;
+}
+
+.checkoutName {
+  margin-left: 45%;
+  margin-top: 2%;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.2rem;
+}
+
+.checkoutDetails {
+  margin-left: 45%;
+  margin-top: 2%;
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  color: #797979;
+}
+
+.delivery {
+  margin-left: 45%;
+  margin-top: 2%;
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+}
+
+.summary {
+  border: 1px solid black;
+  margin-left: 15%;
+  width: 30%;
+  height: fit-content;
+}
+
+.placeOrderCheckout1 {
+  margin-top: 5%;
+  margin-left: 15%;
+  font-family: "Roboto", sans-serif;
+  font-size: 0.8rem;
+  width: 70%;
+  border: none;
+  background-color: #ffd600;
+  padding: 8px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.summaryText {
+  font-family: "Roboto", sans-serif;
+  margin-left: 2%;
+  margin-right: 1%;
+  margin-top: 2%;
+  margin-bottom: 3%;
+  font-size: 0.9rem;
+}
+
+.summaryOrderSumm {
+  margin-left: 2%;
+  margin-top: 2%;
+  font-size: 1.1rem;
+  font-family: "Roboto", sans-serif;
+}
+
+.summItems {
+  font-family: "Roboto", sans-serif;
+  font-size: 0.9rem;
+  margin-top: 2%;
+  color: #797979;
+  margin-left: 5%;
+  margin-bottom: 2%;
+}
+.total {
+  color: #b52b00;
+  margin-left: 5%;
+  margin-top: 2%;
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  margin-bottom: 2%;
+}
+
+.price1 {
+  margin-left: 57%;
+}
+.price {
+  margin-left: 40%;
+}
+
+.orderBottom {
+  border: 1px solid black;
+  width: 55%;
+  margin-left: 5%;
+  height: 10vh;
+}
+
+.placeOrderCheckout2,
+.placeOrderCheckout3 {
+  font-family: "Roboto", sans-serif;
+  font-size: 0.8rem;
+  margin-top: 1.5%;
+  margin-left: 2%;
+  width: 20%;
+  border: none;
+  background-color: #ffd600;
+  padding: 8px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.bottomPrice {
+  color: #b52b00;
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  margin-left: 3%;
+}
+
+.text {
+  font-family: "Roboto", sans-serif;
+  font-size: 0.8rem;
+  margin-left: 25%;
+}
+
+@media screen and (min-width: 769px) {
+  .placeOrderCheckout3 {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+
+  .header{
+    display: none;
+  }
+
+  .container{
+    border: 2px solid black;
+  }
+
+  .checkoutHead {
+    margin-left: 0%;
+    text-decoration: none;
+    text-align: left;
+    margin-left: 7%;
+    margin-top: 4%;
+  }
+
+  .parent {
+    width: 90%;
+    margin-left: 10%;
+  }
+
+  .a {
+    margin-left: 1%;
+  }
+
+  .b {
+    margin-left: 5%;
+  }
+
+  .checkoutImg {
+    width: 90%;
+  }
+
+  .image {
+    width: 20%;
+  }
+
+  .summary {
+    display: none;
+  }
+
+  .orderBottom {
+    width: 90%;
+    border: none;
+    margin-top: 10%;
+  }
+
+  .bottomPrice{
+    text-align: center;
+    margin-bottom: 5%;
+  }
+
+  .placeOrderCheckout2 {
+    display: none;
+  }
+
+  .placeOrderCheckout3{
+    width: 90%;
+  }
+  .text {
+    display: none;
+  }
 }

@@ -8,6 +8,7 @@ import { useLocation } from "react-router-dom";
 import productStyle from "../styles/product.module.css";
 import { addtoCart } from "../api/addtoCart";
 import cartbtnStyles from "../styles/cartbtn.module.css";
+import { useNavigate } from "react-router-dom";
 
 export default function Product() {
   const location = useLocation();
@@ -28,9 +29,13 @@ export default function Product() {
   }
 
   const [message, setMessage] = useState("");
+  const navigate = useNavigate();
 
   const addProduct = async () => {
     try {
+      if (!token) {
+        navigate("/login");
+      }
       const response = await addtoCart(token, productID);
       if (response) {
         console.log("added");

@@ -28,3 +28,28 @@
   font-size: 0.9rem;
   color: #2e0052;
 }
+
+@media screen and (max-width:768px) {
+  .container{
+    margin-left: 0;
+    margin-top: 0;
+    margin-bottom: 2%;
+    padding: 10px 5px;
+    background-color: #2e0052;
+    
+  }
+
+  .head{
+    color: white;
+    margin-top: 1.5%;
+  }
+
+  .img{
+    margin-top: 1.5%;
+  }
+
+  .home{
+    display: none;
+  }
+  
+}

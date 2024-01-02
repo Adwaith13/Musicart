@@ -3,11 +3,59 @@ import grid_notselected from "../assets/logos/grid_notselected.svg";
 import grid_selected from "../assets/logos/grid_selected.svg";
 import list_notselected from "../assets/logos/list_notselected.svg";
 import list_selected from "../assets/logos/list_selected.svg";
+import { fetchColor } from "../api/fetchColor";
+import { fetchType } from "../api/fetchType";
+import { fetchBrand } from "../api/fetchBrand";
+import { useEffect, useState } from "react";
 
 export default function Filters({ view, setView }) {
   const handleView = (selectedview) => {
     setView(selectedview);
   };
+
+  const [color, setColor] = useState([]);
+  const [brand, setBrand] = useState([]);
+  const [type, setType] = useState([]);
+
+  useEffect(() => {
+    const fetchColorData = async () => {
+      try {
+        const data = await fetchColor();
+        setColor(data.color);
+        console.log(data.color);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchColorData();
+  }, []);
+
+  useEffect(() => {
+    const fetchBrandData = async () => {
+      try {
+        const data = await fetchBrand();
+        setBrand(data.brand);
+        console.log(data.brand);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchBrandData();
+  }, []);
+
+  useEffect(() => {
+    const fetchTypeData = async () => {
+      try {
+        const data = await fetchType();
+        setType(data.product_type);
+        console.log(data.product_type);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchTypeData();
+  }, []);
+
   return (
     <div className={filterStyle.container}>
       <img
@@ -27,30 +75,27 @@ export default function Filters({ view, setView }) {
           <option disabled selected>
             Headphone Type
           </option>
-          <option>Price:Lowest</option>
-          <option>Price:Highest</option>
-          <option>Name:(A-Z)</option>
-          <option>Name:(Z-A)</option>
+          {type.map((item, index) => (
+            <option key={index}>{item}</option>
+          ))}
         </select>
 
         <select className={filterStyle.type}>
           <option disabled selected>
             Company
           </option>
-          <option>Price:Lowest</option>
-          <option>Price:Highest</option>
-          <option>Name:(A-Z)</option>
-          <option>Name:(Z-A)</option>
+          {brand.map((item, index) => (
+            <option key={index}>{item}</option>
+          ))}
         </select>
 
         <select className={filterStyle.type}>
           <option disabled selected>
             Color
           </option>
-          <option>Price:Lowest</option>
-          <option>Price:Highest</option>
-          <option>Name:(A-Z)</option>
-          <option>Name:(Z-A)</option>
+          {color.map((item, index) => (
+            <option key={index}>{item}</option>
+          ))}
         </select>
 
         <select className={filterStyle.type}>

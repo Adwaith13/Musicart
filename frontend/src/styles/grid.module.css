@@ -49,7 +49,7 @@
   display: block;
 }
 
-.name{
+.name {
   margin-left: 5%;
   padding: 5px 5px;
   font-family: "Roboto", sans-serif;
@@ -63,10 +63,35 @@
   font-size: 1rem;
 }
 
-.cart{
+.cart {
   position: absolute;
   width: 2.5%;
   margin-left: 15%;
   margin-top: 15%;
   cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    display: flex;
+    width: 96%;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-top: 5%;
+    height: fit-content;
+    flex-wrap: wrap;
+  }
+
+  .product {
+    flex: 0 0 50%;
+    box-sizing: border-box;
+    padding: 10px;
+    margin-bottom: 2%;
+    cursor: pointer;
+    border: 2px solid #CECECE;
+  }
+
+  .image{
+    width: 100%;
+  }
 }

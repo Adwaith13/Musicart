@@ -44,3 +44,21 @@
   padding: 2px;
   cursor: pointer;
 }
+
+@media screen and (max-width:768px) {
+  .container{
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .gridIcon,.listIcon{
+    display: none;
+  }
+
+  .filterContainer{
+    display: inline;
+    overflow-x: scroll;
+    width: 100%;
+  }
+  
+}
