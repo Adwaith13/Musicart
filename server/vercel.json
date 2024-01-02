@@ -1,0 +1,215 @@
+{
+    "version": 2,
+    "builds": [
+        {
+            "src": "/index.js",
+            "use": "@vercel/node"
+        },
+        {
+            "src": "/routes/auth.js",
+            "use": "@vercel/node"
+        },
+        {
+            "src": "/routes/cartActions.js    ",
+            "use": "@vercel/node"
+        },
+        {
+            "src": "/routes/postProduct.js",
+            "use": "@vercel/node"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/(.*)",
+            "dest": "/index.js",
+            "methods": [
+                "GET",
+                "POST",
+                "PATCH",
+                "OPTIONS"
+            ],
+            "headers": {
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Allow-Methods": "GET,PATCH,POST,OPTIONS",
+                "Access-Control-Allow-Headers": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version",
+                "Access-Control-Allow-Credentials": "true"
+            }
+        },
+        {
+            "src": "/register",
+            "dest": "/auth.js",
+            "methods": [
+                "GET",
+                "POST",
+                "PATCH",
+                "OPTIONS"
+            ],
+            "headers": {
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Allow-Methods": "GET,PATCH,POST,OPTIONS",
+                "Access-Control-Allow-Headers": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version",
+                "Access-Control-Allow-Credentials": "true"
+            }
+        },
+        {
+            "src": "/login",
+            "dest": "/auth.js",
+            "methods": [
+                "GET",
+                "POST",
+                "PATCH",
+                "OPTIONS"
+            ],
+            "headers": {
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Allow-Methods": "GET,PATCH,POST,OPTIONS",
+                "Access-Control-Allow-Headers": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version",
+                "Access-Control-Allow-Credentials": "true"
+            }
+        },
+        {
+            "src": "/addtocart/:productID",
+            "dest": "/cartActions.js",
+            "methods": [
+                "GET",
+                "POST",
+                "PATCH",
+                "OPTIONS"
+            ],
+            "headers": {
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Allow-Methods": "GET,PATCH,POST,OPTIONS",
+                "Access-Control-Allow-Headers": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version",
+                "Access-Control-Allow-Credentials": "true"
+            }
+        },
+        {
+            "src": "/checkout",
+            "dest": "/cartActions.js",
+            "methods": [
+                "GET",
+                "PATCH",
+                "OPTIONS"
+            ],
+            "headers": {
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Allow-Methods": "GET,PATCH,OPTIONS",
+                "Access-Control-Allow-Headers": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version",
+                "Access-Control-Allow-Credentials": "true"
+            }
+        },
+        {
+            "src": "/post",
+            "dest": "/postProduct.js",
+            "methods": [
+                "POST",
+                "OPTIONS"
+            ],
+            "headers": {
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Allow-Methods": "POST,OPTIONS",
+                "Access-Control-Allow-Headers": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version",
+                "Access-Control-Allow-Credentials": "true"
+            }
+        },
+        {
+            "src": "/products",
+            "dest": "/postProduct.js",
+            "methods": [
+                "GET",
+                "POST",
+                "OPTIONS"
+            ],
+            "headers": {
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Allow-Methods": "POST,OPTIONS",
+                "Access-Control-Allow-Headers": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version",
+                "Access-Control-Allow-Credentials": "true"
+            }
+        },
+        {
+            "src": "/type",
+            "dest": "/postProduct.js",
+            "methods": [
+                "GET",
+                "OPTIONS"
+            ],
+            "headers": {
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Allow-Methods": "GET,OPTIONS",
+                "Access-Control-Allow-Headers": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version",
+                "Access-Control-Allow-Credentials": "true"
+            }
+        },
+        {
+            "src": "/selectedType",
+            "dest": "/postProduct.js",
+            "methods": [
+                "GET",
+                "OPTIONS"
+            ],
+            "headers": {
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Allow-Methods": "GET,OPTIONS",
+                "Access-Control-Allow-Headers": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version",
+                "Access-Control-Allow-Credentials": "true"
+            }
+        },
+        {
+            "src": "/brand",
+            "dest": "/postProduct.js",
+            "methods": [
+                "GET",
+                "OPTIONS"
+            ],
+            "headers": {
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Allow-Methods": "GET,OPTIONS",
+                "Access-Control-Allow-Headers": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version",
+                "Access-Control-Allow-Credentials": "true"
+            }
+        },
+        {
+            "src": "/selectedBrand",
+            "dest": "/postProduct.js",
+            "methods": [
+                "GET",
+                "OPTIONS"
+            ],
+            "headers": {
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Allow-Methods": "GET,OPTIONS",
+                "Access-Control-Allow-Headers": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version",
+                "Access-Control-Allow-Credentials": "true"
+            }
+        },
+        {
+            "src": "/color",
+            "dest": "/postProduct.js",
+            "methods": [
+                "GET",
+                "OPTIONS"
+            ],
+            "headers": {
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Allow-Methods": "GET,OPTIONS",
+                "Access-Control-Allow-Headers": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version",
+                "Access-Control-Allow-Credentials": "true"
+            }
+        },
+        {
+            "src": "/selectedColor",
+            "dest": "/postProduct.js",
+            "methods": [
+                "GET",
+                "OPTIONS"
+            ],
+            "headers": {
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Allow-Methods": "GET,OPTIONS",
+                "Access-Control-Allow-Headers": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version",
+                "Access-Control-Allow-Credentials": "true"
+            }
+        }
+    ]
+}
