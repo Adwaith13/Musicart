@@ -8,7 +8,13 @@ import { fetchType } from "../api/fetchType";
 import { fetchBrand } from "../api/fetchBrand";
 import { useEffect, useState } from "react";
 
-export default function Filters({ view, setView }) {
+export default function Filters({
+  view,
+  setView,
+  handleBrandFilter,
+  handleTypeFilter,
+  handleColorFilter,
+}) {
   const handleView = (selectedview) => {
     setView(selectedview);
   };
@@ -71,7 +77,13 @@ export default function Filters({ view, setView }) {
         alt="List View"
       />
       <div className={filterStyle.filterContainer}>
-        <select className={filterStyle.type}>
+        <select
+          className={filterStyle.type}
+          onChange={(e) => {
+            const selectedType = e.target.value;
+            handleTypeFilter(selectedType);
+          }}
+        >
           <option disabled selected>
             Headphone Type
           </option>
@@ -80,7 +92,13 @@ export default function Filters({ view, setView }) {
           ))}
         </select>
 
-        <select className={filterStyle.type}>
+        <select
+          className={filterStyle.type}
+          onChange={(e) => {
+            const selectedBrand = e.target.value;
+            handleBrandFilter(selectedBrand);
+          }}
+        >
           <option disabled selected>
             Company
           </option>
@@ -89,7 +107,13 @@ export default function Filters({ view, setView }) {
           ))}
         </select>
 
-        <select className={filterStyle.type}>
+        <select
+          className={filterStyle.type}
+          onChange={(e) => {
+            const selectedColor = e.target.value;
+            handleColorFilter(selectedColor);
+          }}
+        >
           <option disabled selected>
             Color
           </option>
