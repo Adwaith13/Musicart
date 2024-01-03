@@ -4,6 +4,7 @@ import gridStyles from "../styles/grid.module.css";
 import cart from "../assets/logos/cart.svg";
 import Product from "../pages/Product";
 import { useNavigate } from "react-router-dom";
+import { addtoCart } from "../api/addtoCart";
 
 export default function Grid() {
   const [data, setData] = useState([]);
@@ -27,6 +28,16 @@ export default function Grid() {
     navigate("/product", { state: { productData } });
   };
 
+  const loginToken = localStorage.getItem("loginToken");
+  const registerToken = localStorage.getItem("registerToken");
+  let token;
+
+  if (loginToken) {
+    token = loginToken;
+  } else if (registerToken) {
+    token = registerToken;
+  }
+
   return (
     <div className={gridStyles.container}>
       {data.map((item, index) => (
@@ -35,7 +46,24 @@ export default function Grid() {
           className={gridStyles.product}
           onClick={() => handleProduct(item)}
         >
-          <img src={cart} className={gridStyles.cart} alt="Add to Cart" />
+          <img
+            src={cart}
+            className={gridStyles.cart}
+            alt="Add to Cart"
+            onClick={async (e) => {
+              e.stopPropagation();
+              try {
+                if (!token) {
+                  navigate("/login");
+                }
+                const response = await addtoCart(token, item._id);
+                console.log(response);
+                alert("Product added to Cart")
+              } catch (error) {
+                console.log(error);
+              }
+            }}
+          />
           {item.image.map((imageUrl, imageIndex) => (
             <img
               className={gridStyles.image}

@@ -17,9 +17,7 @@ export default function Product() {
   const productID = productData._id;
 
   const loginToken = localStorage.getItem("loginToken");
-  console.log("login", loginToken);
   const registerToken = localStorage.getItem("registerToken");
-  console.log("register", registerToken);
   let token;
 
   if (loginToken) {
