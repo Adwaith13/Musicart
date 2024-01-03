@@ -83,7 +83,6 @@ router.get("/type", async (req, res) => {
 router.get("/selectedType", async (req, res) => {
   try {
     const { selectedType } = req.query;
-    console.log(selectedType);
 
     if (!selectedType) {
       return res.status(400).json({ error: "Type is required" });
@@ -114,7 +113,6 @@ router.get("/brand", async (req, res) => {
 router.get("/selectedBrand", async (req, res) => {
   try {
     const { selectedBrand } = req.query;
-    console.log(selectedBrand);
 
     if (!selectedBrand) {
       return res.status(400).json({ error: "Brand is required" });
@@ -145,7 +143,6 @@ router.get("/color", async (req, res) => {
 router.get("/selectedColor", async (req, res) => {
   try {
     const { selectedColor } = req.query;
-    console.log(selectedColor);
 
     if (!selectedColor) {
       return res.status(400).json({ error: "Color is required" });
