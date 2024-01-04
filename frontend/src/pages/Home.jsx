@@ -8,6 +8,8 @@ import List from "../Components/List";
 import FilteredBrands from "../Components/FilteredBrands";
 import FilteredType from "../Components/FilteredType";
 import FilteredColors from "../Components/FilteredColors";
+import SortedProductsLow from "../Components/SortedProductsLow";
+import SortedProductsHigh from "../Components/SortedProductsHigh";
 import { useState } from "react";
 
 export default function Home() {
@@ -19,17 +21,32 @@ export default function Home() {
 
   const handleBrandFilter = (brand) => {
     setSelectedBrand(brand);
-    setFilteredComponent('brand');
+    setFilteredComponent("brand");
   };
 
   const handleTypeFilter = (type) => {
     setSelectedType(type);
-    setFilteredComponent('type');
+    setFilteredComponent("type");
   };
 
   const handleColorFilter = (color) => {
     setSelectedColor(color);
-    setFilteredComponent('color');
+    setFilteredComponent("color");
+  };
+
+  const handleSortFilter = (sortOption) => {
+    // Handle the sorting options
+    switch (sortOption) {
+      case 'Price:Lowest':
+        setFilteredComponent('sortedLow');
+        break;
+      case 'Price:Highest':
+        setFilteredComponent('sortedHigh');
+        break;
+      default:
+        setFilteredComponent(null);
+        break;
+    }
   };
 
   const renderFilteredComponent = () => {
@@ -40,6 +57,10 @@ export default function Home() {
         return selectedType && <FilteredType selectedType={selectedType} />;
       case 'color':
         return selectedColor && <FilteredColors selectedColor={selectedColor} />;
+      case 'sortedLow':
+        return <SortedProductsLow />;
+      case 'sortedHigh':
+        return <SortedProductsHigh />;
       default:
         return null;
     }
@@ -57,6 +78,7 @@ export default function Home() {
         handleBrandFilter={handleBrandFilter}
         handleTypeFilter={handleTypeFilter}
         handleColorFilter={handleColorFilter}
+        handleSortFilter={handleSortFilter}
       />
       {renderFilteredComponent()}
       {view === "grid" ? <Grid /> : <List />}

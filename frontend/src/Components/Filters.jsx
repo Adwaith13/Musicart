@@ -14,6 +14,7 @@ export default function Filters({
   handleBrandFilter,
   handleTypeFilter,
   handleColorFilter,
+  handleSortFilter,
 }) {
   const handleView = (selectedview) => {
     setView(selectedview);
@@ -28,7 +29,6 @@ export default function Filters({
       try {
         const data = await fetchColor();
         setColor(data.color);
-        console.log(data.color);
       } catch (error) {
         console.log(error);
       }
@@ -41,7 +41,6 @@ export default function Filters({
       try {
         const data = await fetchBrand();
         setBrand(data.brand);
-        console.log(data.brand);
       } catch (error) {
         console.log(error);
       }
@@ -54,7 +53,6 @@ export default function Filters({
       try {
         const data = await fetchType();
         setType(data.product_type);
-        console.log(data.product_type);
       } catch (error) {
         console.log(error);
       }
@@ -122,7 +120,13 @@ export default function Filters({
           ))}
         </select>
 
-        <select className={filterStyle.type}>
+        <select
+          className={filterStyle.type}
+          onChange={(e) => {
+            const selectedSortOption = e.target.value;
+            handleSortFilter(selectedSortOption);
+          }}
+        >
           <option disabled selected>
             Price
           </option>
