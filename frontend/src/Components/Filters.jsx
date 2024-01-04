@@ -136,7 +136,13 @@ export default function Filters({
           <option>Name:(Z-A)</option>
         </select>
 
-        <select className={filterStyle.sort}>
+        <select
+          className={filterStyle.sort}
+          onChange={(e) => {
+            const selectedSortOption = e.target.value;
+            handleSortFilter(selectedSortOption);
+          }}
+        >
           <option disabled selected>
             Sort by - Featured
           </option>

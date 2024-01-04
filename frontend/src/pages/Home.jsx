@@ -10,6 +10,8 @@ import FilteredType from "../Components/FilteredType";
 import FilteredColors from "../Components/FilteredColors";
 import SortedProductsLow from "../Components/SortedProductsLow";
 import SortedProductsHigh from "../Components/SortedProductsHigh";
+import SortA from "../Components/SortA";
+import SortZ from "../Components/SortZ";
 import { useState } from "react";
 
 export default function Home() {
@@ -35,13 +37,18 @@ export default function Home() {
   };
 
   const handleSortFilter = (sortOption) => {
-    // Handle the sorting options
     switch (sortOption) {
-      case 'Price:Lowest':
-        setFilteredComponent('sortedLow');
+      case "Price:Lowest":
+        setFilteredComponent("sortedLow");
         break;
-      case 'Price:Highest':
-        setFilteredComponent('sortedHigh');
+      case "Price:Highest":
+        setFilteredComponent("sortedHigh");
+        break;
+      case "Name:(A-Z)":
+        setFilteredComponent("sortA");
+        break;
+      case "Name:(Z-A)":
+        setFilteredComponent("sortZ");
         break;
       default:
         setFilteredComponent(null);
@@ -51,16 +58,24 @@ export default function Home() {
 
   const renderFilteredComponent = () => {
     switch (filteredComponent) {
-      case 'brand':
-        return selectedBrand && <FilteredBrands selectedBrand={selectedBrand} />;
-      case 'type':
+      case "brand":
+        return (
+          selectedBrand && <FilteredBrands selectedBrand={selectedBrand} />
+        );
+      case "type":
         return selectedType && <FilteredType selectedType={selectedType} />;
-      case 'color':
-        return selectedColor && <FilteredColors selectedColor={selectedColor} />;
-      case 'sortedLow':
+      case "color":
+        return (
+          selectedColor && <FilteredColors selectedColor={selectedColor} />
+        );
+      case "sortedLow":
         return <SortedProductsLow />;
-      case 'sortedHigh':
+      case "sortedHigh":
         return <SortedProductsHigh />;
+      case "sortA":
+        return <SortA />;
+      case "sortZ":
+        return <SortZ />;
       default:
         return null;
     }
