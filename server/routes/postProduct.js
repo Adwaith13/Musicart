@@ -156,4 +156,24 @@ router.get("/selectedColor", async (req, res) => {
   }
 });
 
+router.get("/lowest", async (req, res) => {
+  try {
+    const sortedProducts = await Product.find().sort({ product_price: 1 });
+    res.status(200).json({ sortedProducts });
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+});
+
+router.get("/highest", async (req, res) => {
+  try {
+    const sortedProducts = await Product.find().sort({ product_price: -1 });
+    res.status(200).json({ sortedProducts });
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+});
+
 module.exports = router;
