@@ -6,6 +6,7 @@ import cartStyles from "../styles/cart.module.css";
 import { fetchCart } from "../api/fetchCart";
 import { Fragment, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import MobileFooter from "../Components/MobileFooter";
 
 export default function Cart() {
   const loginToken = localStorage.getItem("loginToken");
@@ -143,8 +144,8 @@ export default function Cart() {
             </span>
           </Fragment>
         ))}
+      <MobileFooter />
       </div>
-      <Footer />
     </div>
   );
 }

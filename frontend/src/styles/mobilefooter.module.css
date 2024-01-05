@@ -1,0 +1,37 @@
+@media screen and (min-width: 769px) {
+  .container {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    width: 100%;
+    position: sticky;
+    bottom: 0;
+    border: 1px solid grey;
+    background-color: white;
+    padding: 2px 2px;
+  }
+
+  .home {
+    width: 8%;
+    height: 2%;
+    margin-left: 5%;
+    cursor: pointer;
+  }
+
+  .cart {
+    width: 9%;
+    height: 3%;
+    margin-left: 30%;
+    cursor: pointer;
+  }
+
+  .login {
+    width: 10%;
+    height: 3%;
+    margin-left: 35%;
+    cursor: pointer;
+  }
+}

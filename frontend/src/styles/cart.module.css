@@ -234,13 +234,39 @@
 }
 
 @media screen and (max-width: 768px) {
-
-  .header{
+  .header {
     display: none;
   }
 
-  .container{
-    border: 2px solid black;
+  .container {
+    width: 90%;
+    display: block;
+  }
+
+  .left{
+    width: 100%;
+  }
+
+  .productTable{
+    width: 20%;
+  }
+  .tableImage {
+    width: 5%;
+
+    
+  }
+
+  .right {
+    display: none;
+  }
+
+  .placeOrderCart {
+    margin-left: 5%;
+    width: 90%;
+    padding: 10px 5px;
+    margin-top: 8%;
+    margin-bottom: 10%;
+    font-size: 1rem;
   }
 
   .checkoutHead {
@@ -282,7 +308,7 @@
     margin-top: 10%;
   }
 
-  .bottomPrice{
+  .bottomPrice {
     text-align: center;
     margin-bottom: 5%;
   }
@@ -291,7 +317,7 @@
     display: none;
   }
 
-  .placeOrderCheckout3{
+  .placeOrderCheckout3 {
     width: 90%;
   }
   .text {

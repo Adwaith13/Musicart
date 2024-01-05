@@ -1,5 +1,4 @@
 import Navbar from "../Components/Navbar";
-import Footer from "../Components/Footer";
 import Back from "../Components/Back";
 import HomeLogo from "../Components/HomeLogo";
 import bag from "../assets/logos/bag.svg";
@@ -7,6 +6,7 @@ import cartStyles from "../styles/cart.module.css";
 import { fetchCart } from "../api/fetchCart";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import MobileFooter from "../Components/MobileFooter";
 
 export default function Cart() {
   const loginToken = localStorage.getItem("loginToken");
@@ -93,7 +93,10 @@ export default function Cart() {
           <div className={cartStyles.right} key={item.product._id}>
             <h3 className={cartStyles.rightHead}>Price Details</h3>
             <p className={cartStyles.detail}>
-              Total MRP - <span className={cartStyles.numbers}>₹{item.product.product_price}</span>
+              Total MRP -{" "}
+              <span className={cartStyles.numbers}>
+                ₹{item.product.product_price}
+              </span>
             </p>
             <p className={cartStyles.detail}>
               Discount on MRP <span className={cartStyles.numbers}>₹0</span>
@@ -103,7 +106,9 @@ export default function Cart() {
             </p>
             <p className={cartStyles.detail}>
               Total Amount -{" "}
-              <span className={cartStyles.numbers}>₹{parseInt(item.product.product_price) + 45}</span>
+              <span className={cartStyles.numbers}>
+                ₹{parseInt(item.product.product_price) + 45}
+              </span>
             </p>
           </div>
         ))}
@@ -114,7 +119,7 @@ export default function Cart() {
       >
         Place Order
       </button>
-      <Footer />
+      <MobileFooter />
     </div>
   );
 }

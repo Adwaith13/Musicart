@@ -40,7 +40,58 @@
 .description,
 .availability,
 .brand {
-  font-family: "Roboto",sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 1rem;
   margin-bottom: 1%;
+}
+
+@media screen and (min-width: 769px) {
+  .div_head {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    width: 100%;
+    margin-top: 8%;
+  }
+  .head {
+    display: none;
+  }
+
+  .detailsContainer {
+    width: 100%;
+  }
+
+  .productContainer {
+    width: 95%;
+    display: block;
+    margin-left: 2%;
+  }
+
+  .image {
+    width: 92%;
+    height: 50%;
+    margin-left: 5%;
+  }
+
+  .name {
+    font-size: 1.8rem;
+    margin-top: 5%;
+  }
+
+  .div_head {
+    font-size: 1rem;
+    font-family: "Roboto", sans-serif;
+    margin-bottom: 5%;
+  }
+
+  .price,.color{
+    display: none;
+  }
+
+  .about{
+    margin-top: 5%;
+  }
 }

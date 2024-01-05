@@ -1,6 +1,6 @@
 .addcartbtn {
   margin-left: 40%;
-  margin-top:1%;
+  margin-top: 1%;
   font-family: "Roboto", sans-serif;
   font-size: 0.8rem;
   border: none;
@@ -22,4 +22,21 @@
   padding: 8px;
   border-radius: 10px;
   cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .addcartbtn {
+    margin-top: 5%;
+    width: 90%;
+    margin-left: 5%;
+    padding: 10px 0px;
+  }
+
+  .buybtn {
+    margin-top: 5%;
+    width: 90%;
+    margin-left: 5%;
+    padding: 10px 0px;
+    margin-bottom: 0;
+  }
 }

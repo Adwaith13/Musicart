@@ -9,6 +9,7 @@ import productStyle from "../styles/product.module.css";
 import { addtoCart } from "../api/addtoCart";
 import cartbtnStyles from "../styles/cartbtn.module.css";
 import { useNavigate } from "react-router-dom";
+import MobileFooter from "../Components/MobileFooter";
 
 export default function Product() {
   const location = useLocation();
@@ -60,8 +61,10 @@ export default function Product() {
             width={400}
             className={productStyle.image}
           ></img>
-          <div>
+          <div className={productStyle.detailsContainer}>
             <h2 className={productStyle.name}>{productData.product_name}</h2>
+            <p className={productStyle.div_head}>{productData.product_head}</p>
+            <MobileFooter />
             <p className={productStyle.price}>
               Price - ₹{productData.product_price}
             </p>
