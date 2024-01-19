@@ -39,6 +39,7 @@ export default function Product() {
       if (response) {
         console.log("added");
         setMessage("Product added to cart");
+        navigate("/cart")
       } else {
         setMessage("Failed to add product to cart");
       }
