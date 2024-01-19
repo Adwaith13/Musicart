@@ -17,7 +17,7 @@ export default function BuyNow() {
     if (!token) {
       navigate("/login");
     } else {
-      navigate("/checkout");
+      navigate("/cart");
     }
   };
   return (
