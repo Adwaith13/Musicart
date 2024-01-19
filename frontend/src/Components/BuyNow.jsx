@@ -6,11 +6,18 @@ export default function BuyNow() {
   const loginToken = localStorage.getItem("loginToken");
   const registerToken = localStorage.getItem("registerToken");
 
+  let token;
+  if (loginToken) {
+    token = loginToken;
+  } else {
+    token = registerToken;
+  }
+
   const thanksNavigate = () => {
-    if (!loginToken || !registerToken) {
+    if (!token) {
       navigate("/login");
     } else {
-      navigate("/thanks");
+      navigate("/checkout");
     }
   };
   return (
