@@ -57,7 +57,7 @@ export default function List() {
                 }
                 const response = await addtoCart(token, item._id);
                 console.log(response);
-                alert("Product added to Cart");
+                navigate("/cart")
               } catch (error) {
                 console.log(error);
               }
